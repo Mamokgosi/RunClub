@@ -198,6 +198,7 @@
     <Content Include="images\Lulu.png" />
     <Content Include="images\Mamii.jpg" />
     <Content Include="images\Member.jpg" />
+    <Content Include="images\Mmabatho.png" />
     <Content Include="images\video-placeholder.jpg" />
     <Content Include="index.html" />
     <Content Include="js\bootstrap.js" />
