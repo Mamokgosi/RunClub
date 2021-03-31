@@ -1,0 +1,83 @@
+﻿@model RunClub.Models.Distance
+@{
+    ViewBag.Title = "Create Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Distances", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <header id="header">
+        <div class="container">
+            <div class="logo"><a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png" alt="Chubby Ladies"></a></div>
+            <nav id="nav">
+                <div class="opener-holder">
+                    <a href="#" class="nav-opener"><span></span></a>
+                </div>
+                <div class="nav-drop">
+                    <ul>
+                        <li class="active visible-sm visible-xs"><a style="color:deeppink" href="@Url.Action("Index", "Home")">Back To Home</a></li>
+                    </ul>                  
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="visual" style="font-family:Tahoma;color:snow;height:400px;width:100%;background:url('/images/john vuli.jpeg')">
+        <div class="container">
+            <div class="text-block">
+                <h4 style="color:deeppink"><b> Step <b style="color:white">1</b> of 2</b></h4> <br />
+                <h3 style="color:deeppink"><b>Fill In This Form To Generate Your Certificate</b></h3>
+
+                <div style="text-align:center" class="row">
+
+
+
+                    <div class="col-md-12">
+
+                        <fieldset style="color:yellow">
+                            @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Name & Surname", required = "required" } })
+                        </fieldset>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <br />
+                        <fieldset>
+                            @Html.EditorFor(model => model.DistanceCompleted, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Distance You Completed (In Meters)", required = "required" } })
+                        </fieldset>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <br />
+                        <fieldset>
+                            @Html.EditorFor(model => model.WalkOrRun, new { htmlAttributes = new { @class = "form-control", placeholder = "Did You Walk Or Run?", required = "required" } })
+                        </fieldset>
+                    </div>
+
+                    <div class="col-md-12">
+                        <br />
+                        <fieldset>
+                            @Html.EditorFor(model => model.Time, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Time In Minutes (If you kept track of it)", required = "required" } })
+                        </fieldset>
+                    </div>
+
+                    <div class="col-md-12">
+                        <fieldset>
+                            <h3>
+                                <input style="color:white;background-color:deeppink;font-family:Calibri;border:none" class="form-group" type="submit" value="Create Now" />
+                            </h3>
+                        </fieldset>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        @*<img src="~/images/img-bg-01.jpg" alt="" class="bg-stretch">*@
+    </section>
+
+
+}

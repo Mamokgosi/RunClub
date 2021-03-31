@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<header id="header">
+
+        <nav id="nav" style="background-color: hotpink;width:100% ; height:50%">
+            <ul>
+                <a href = "@Url.Action("Index", "Home")" class="navbar-brand left"><img src="~/images/Chubby Ladies Logo.jpg" style="width: 15%; height:200%; margin-top:-17px;"alt="Chubby Ladies"></a>
+                <li style="color:white ; margin-top: 11px; "><a class="active" href="~/Home/Index"><b style="color:white">Home</b></a></li>
+                <li style="color: white; margin-top: 11px;"><a style="color:white" href="~/Home/About"><b style="color:white">About</b></a></li>
+                @*<li style="color:white"><a style="color:hotpink" href="~/Home/Events"><b style="color:white">Recent Events</b></a></li>
+        <li style="color:white"><a style="color:hotpink" href="~/Home/Member"><b style="color:white">Membership</b></a></li>*@
+            <li style="color:white;margin-top: 11px"><a style="color:white" href="~/Home/Kit"><b style="color:white">Our Club Kit</b></a></li>
+        @*<li style="color:white"><a style="color:hotpink" href="~/Home/Rule"><b style="color:white">Rules</b></a></li>*@
+            <li style="color: white; margin-top: 11px;"><a style="color:white" href="~/Home/Contact"><b style="color:white">Contacts</b></a></li>
+            </ul>
+            <div class="opener-holder">
+                <a href="#" class="nav-opener"><span></span></a>
+            </div>
+            <div class="nav-drop">
+                <ul>
+                    <li class="active visible-sm visible-xs"><a style="color:white" href="@Url.Action("Index", "Home")">Back To Home</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+</header>
+
+<br></br>
+<br></br>
+<br></br>
+<section class="main">
+    <div class="container">
+        <div class="row">
+            <div class="text-box row-md-offset-1 row-md-10">
+
+                <b><p>Who are we?</p></b>
+                <p>
+                    We are a community of women of all shapes, sizes and all ages from across the globe.We started 3 years ago with just 1 member who is also the founder of Chubby Ladies Run Club- Louisa Maphutha. We now have over 2800 + runners from all over the world. Everyone runs/walks at their own pace and strives to achieve their own goals while we support one another.
+                    Our aim is to make running fun and pleasurable for every women out there and enjoy great health benefits.
+                </p>
+                <b><img src="~/images/Lulu.png" style="width : 60%"></b>
+                <b><p>Our Vision</p></b>
+                <p> We aim to inspire ladies of all sizes especially those with chubby bodies that they too can be involved in sporting activities and keep fit, benefit from the great health benefits and reduce obesity all over the world while having fun.We believe everyone can run, Everyone! There is no limits.</p>
+
+            </div>
+        </div>
+    </div>
+</section>

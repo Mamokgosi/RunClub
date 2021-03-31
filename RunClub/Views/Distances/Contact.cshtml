@@ -1,0 +1,69 @@
+﻿@model RunClub.Models.Distance
+@{
+    ViewBag.Title = "Create Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Distances", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <section id="contact" class="content-section">
+        <br /><br /><br /><br /><br />  <br />
+        <div id="contact-content">
+            <div class="section-heading">
+                <h4 style="color:yellow;text-align:center">
+                    <b> Generate Your Distance Form- Fill in this form below.</b>
+                    <br>
+                </h4>
+                <br /><br />
+            </div>
+            <div style="text-align:center" class="section-content">
+                <form style="text-align:center" id="contact" action="#" method="post">
+                    <div style="text-align:center" class="row">
+
+
+
+                        <div class="col-md-12">
+                            <br /><br /><br /><br />
+                            <fieldset>
+                                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "Name & Surname", required = "required" } })
+                            </fieldset>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <br /><br /><br /><br />
+                            <fieldset>
+                                @Html.EditorFor(model => model.DistanceCompleted, new { htmlAttributes = new { @class = "form-control", placeholder = "Distance You Completed (Meters)", required = "required" } })
+                            </fieldset>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <br /><br /><br /><br />
+                            <fieldset>
+                                @Html.EditorFor(model => model.WalkOrRun, new { htmlAttributes = new { @class = "form-control", placeholder = "Did You Walk Or Run", required = "required" } })
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-12">
+                            <br /><br /><br /><br />
+                            <fieldset>
+                                @Html.EditorFor(model => model.Time, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Time In Minutes (If you kept track of it)", required = "required" } })
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-12">
+                            <fieldset>
+                                <h5>
+                                    <input style="color:white;background-color:yellow;font-family:Calibri;border:none" class="form-group" type="submit" value="Create Now" />
+                                </h5>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+}

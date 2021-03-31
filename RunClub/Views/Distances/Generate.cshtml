@@ -1,0 +1,89 @@
+﻿@model RunClub.Models.Distance
+@{
+    ViewBag.Title = "Download Certificate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string myName = Convert.ToString(Session["FullName"]);
+    string myWalk = Convert.ToString(Session["WalkOrRun"]);
+    string myTime = Convert.ToString(Session["Time"]);
+    string myDistance = Convert.ToString(Session["Distance"]);
+}
+
+@using (Html.BeginForm("Create", "Distances", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <header id="header">
+        <div class="container">
+            <div class="logo"><a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png" alt="Cgubby Ladies"></a></div>
+            <nav id="nav">
+                <div class="opener-holder">
+                    <a href="#" class="nav-opener"><span></span></a>
+                </div>
+                <div class="nav-drop">
+                    <ul>
+                        <li class="active visible-sm visible-xs"><a style="color:deeppink" href="@Url.Action("Index", "Home")">Back To Home</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="visual" style="font-family:Tahoma;color:snow;height:1100px;width:100%;background:url('/images/john vuli.jpeg')">
+        <div class="container">
+            <div class="text-block">
+                <h4 style="color:deeppink"><b> Step <b style="color:white">2</b> of 2</b></h4><br />
+
+                <div style="text-align:center" class="row">
+
+
+
+                    <div class="col-md-12">
+                        <h3 style="color:deeppink">
+                          <b>  Full Name: </b><span>&nbsp;</span>
+                            <b style="color:deeppink">@myName</b>
+                        </h3>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <br />
+                        <h3 style="color:deeppink">
+                          <b>  Did You Walk Or Run?</b> <span>&nbsp;</span>
+                            <b style="color:deeppink">@myWalk</b>
+                        </h3>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <br />
+                        <h3 style="color:deeppink">
+                           <b> Time: </b> <span>&nbsp;</span>
+                            <b style="color:deeppink">@myTime Minutes </b>
+                        </h3>
+                    </div>
+
+                    <div class="col-md-12">
+                        <br />
+                        <h3 style="color:deeppink">
+                        <b>    Distance In Meters: </b><span>&nbsp;</span>
+                            <b style="color:deeppink">@myDistance Meters</b>
+                        </h3>
+                    </div>
+
+                    <div style="color:green" class="col-md-12">
+                        <fieldset>
+                           
+                                <h2><a style="color:white;background-color:deeppink;border-bottom-color:deeppink" href="@Url.Action("PrintCertificate", "Distances")"><b>Print Certificate</b></a></h2>
+                      
+                        </fieldset>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        @*<img src="~/images/img-bg-01.jpg" alt="" class="bg-stretch">*@
+    </section>
+
+
+}
